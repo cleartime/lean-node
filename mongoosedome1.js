@@ -43,11 +43,39 @@ var TestModel = db.model("test1", TestSchema );
 // });
 
 //model调用的是create方法，entity调用的是save方法
-var TestEntity = new TestModel({
-    name : "jerry", 
-    age  : 28, 
-    email: "jerry@qq.com"
-});
-TestEntity.save(function(error,doc) {
-   console.log(doc);
-});
+// var TestEntity = new TestModel({
+//     name : "jerry", 
+//     age  : 28, 
+//     email: "jerry@qq.com"
+// });
+// TestEntity.save(function(error,doc) {
+//    console.log(doc);
+// });
+
+
+//数据更新
+
+// var conditions = {name : 'test_create'};
+ 
+// var update = {$set : { age : 6 }};
+ 
+// TestModel.update(conditions, update, function(error,doc){//obj.update(查询条件,更新对象,callback);
+//     if(error) {
+//         console.log(error);
+//     } else {
+//         console.log('Update success!',doc);
+//     }
+// });
+
+
+// 删除数据
+
+// var conditions = { name: 'helloworld' };
+ 
+// TestModel.remove(conditions, function(error){
+//     if(error) {
+//         console.log(error);
+//     } else {
+//         console.log('Delete success!');
+//     }
+// });
