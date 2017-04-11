@@ -19,3 +19,4 @@ var TestSchema = new mongoose.Schema({
 
 // 创建Model
 var TestModel = db.model("test1", TestSchema);
+console.log(TestModel)
