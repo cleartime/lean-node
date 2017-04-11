@@ -7,7 +7,6 @@ db.connection.on("open", function () {
     console.log("------数据库连接成功！------");
 });
 
-
 var TestSchema = new mongoose.Schema({
     name : { type:String },//属性name,类型为String
     age  : { type:Number, default:0 },//属性age,类型为Number,默认为0
@@ -19,4 +18,11 @@ var TestSchema = new mongoose.Schema({
 
 // 创建Model
 var TestModel = db.model("test1", TestSchema);
-console.log(TestModel)
+
+var TestEntity = new TestModel({
+       name : "Lenka",
+       age  : 36,
+       email: "lenka@qq.com"
+});
+console.log(TestEntity.name); // Lenka
+console.log(TestEntity.age); // 36
