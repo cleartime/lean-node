@@ -43,16 +43,16 @@ var insertData = function (db, callback) {
 //     });
 
 
-//删除数据
-//   var whereStr = {"name":'菜鸟工具'};
-//   collection.remove(whereStr, function(err, result) {
-//     if(err)
-//     {
-//       console.log('Error:'+ err);
-//       return;
-//     }
-//     callback(result);
-//   });
+// 删除数据
+  var whereStr = {"name":'菜鸟工具'};
+  collection.remove(whereStr, function(err, result) {
+    if(err)
+    {
+      console.log('Error:'+ err);
+      return;
+    }
+    callback(result);
+  });
 };
 
 
