@@ -26,7 +26,19 @@ var TestModel = db.model("test2", TestSchema );
 //     }
 // });
 //返回只包含一个键值name、age的所有记录
-TestModel.find({},{name:1, age:1, _id:0},function(err,docs){
-    console.log(docs)
-   //docs 查询结果集
-})
+// TestModel.find({},{email:1, _id:0},function(err,docs){
+//     console.log(docs)
+//    //docs 查询结果集
+// })
+
+// TestModel.findOne({ age: 27}, function (err, doc){
+//     console.log(doc)
+//    // 查询符合age等于27的第一条数据
+//    // doc是查询结果
+// });
+
+
+TestModel.findById('58ee3bcf041f4043cfa29fff', function (err, doc){
+    console.log(doc)
+ //doc 查询结果文档
+});	
