@@ -38,7 +38,16 @@ var TestModel = db.model("test2", TestSchema );
 // });
 
 
-TestModel.findById('58ee3bcf041f4043cfa29fff', function (err, doc){
-    console.log(doc)
- //doc 查询结果文档
-});	
+// TestModel.findById('58ee3bcf041f4043cfa29fff', function (err, doc){
+//     console.log(doc)
+//  //doc 查询结果文档
+// });	
+
+
+// TestModel.find({},{age:1},{limit:2},function(err,docs){
+//     console.log(docs);
+// });
+
+TestModel.find({age:50},null,{skip:1},function(err,docs){
+   console.log(docs);
+});
