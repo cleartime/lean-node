@@ -48,6 +48,14 @@ var TestModel = db.model("test2", TestSchema );
 //     console.log(docs);
 // });
 
-TestModel.find({age:50},null,{skip:1},function(err,docs){
+// TestModel.find({age:50},null,{skip:1},function(err,docs){
+//    console.log(docs);
+// });
+
+
+TestModel.find({},
+               {name: 1, age: 1, _id: 0 },
+               {sort:{name: -1 }},
+               function(err,docs){
    console.log(docs);
 });
