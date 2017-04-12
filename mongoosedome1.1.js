@@ -70,7 +70,7 @@ var TestModel = db.model("test1", TestSchema );
 
 // 删除数据
 
-// var conditions = { name: 'helloworld' };
+//var conditions = { name: 'helloworld' };
  
 // TestModel.remove(conditions, function(error){
 //     if(error) {
