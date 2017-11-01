@@ -20,5 +20,8 @@
     "cheerio": "^0.22.0",
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.4"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }
