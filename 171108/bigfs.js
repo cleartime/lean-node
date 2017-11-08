@@ -7,7 +7,7 @@ function copy(src, dst){
 
 function main(argv){
 
-	copy(argv[0], argv[1)
+	copy(argv[0], argv[1])
 }
 
 
