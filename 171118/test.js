@@ -45,9 +45,10 @@ const asyncReadFile = async function () {
   endList = urlList.concat(lastUrlList);
   
   endList = endList.filter(t=>t.includes('.vue'))
-  return  endList
+
+  // return Promise.resolve(endList)
 };
 
- const b = asyncReadFile();
- console.log(b)
+let b = await asyncReadFile()
+
 
