@@ -24,22 +24,13 @@ const lstat = function (fileName) {
   });
 };
 
-// const gen = function* () {
-//   const f1 = yield readFile('/etc/fstab');
-//   const f2 = yield readFile('/etc/shells');
-//   console.log(f1.toString());
-//   console.log(f2.toString());
-// };
 
 const asyncReadFile = async function () {
   const urlList = await readDir(url);
   let dirList= []
   let lastUrlList= []
-  // for(let i = 0,len = urlList.length; i < len;i++){
-  // 	if(await lstat(url+'/'+urlList[i])){
-  // 		f2 = urlList[i]
-  // 	}
-  // }
+  let endList = [];
+
   for(let i of urlList){
  	if(await lstat(url+'/'+i)){
   		dirList.push(i)
@@ -47,15 +38,14 @@ const asyncReadFile = async function () {
   }
 
   for(let i of dirList){
-  	console.log.log(i)
-  	// lastUrlList = await readDir(i);
+  	lastUrlList = lastUrlList.concat(await readDir(url+'/'+i));
   }
-  // urlList.forEach(t=>{
-  // 	f2 = await lstat(t)
-  // 	console.log(f2)
-  // })
-  // console.log(f1);
-  // console.log(dirList)
+ 
+
+  endList = urlList.concat(lastUrlList);
+  
+  endList = endList.filter(t=>t.includes('.vue'))
+  console.log(endList)
 };
 
 asyncReadFile();
