@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "express": "^4.16.2",
-    "glob": "^7.1.2"
+    "glob": "^7.1.2",
+    "request": "^2.83.0"
   }
 }
