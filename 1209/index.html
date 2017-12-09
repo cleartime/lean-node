@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
-	<script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+    <title></title>
+    <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
 </head>
+
 <body>
-<div id="app">
-	{{name}}
-</div>
-<script type="text/javascript">
-	let vm = new Vue({
-		el: '#app',
-		data:{
-				name: 'test render function'
-		}
-	})
-</script>
+    <div id="app">
+        {{name}}
+        <my-input v-model='name' :value='name'></my-input>
+    </div>
+    <script type="text/javascript">
+    Vue.component('my-input', {
+        render: function(createElement) {
+            var self = this
+            return createElement('input', {
+                domProps: {
+                    value: self.value
+                },
+                on: {
+                    input: function(event) {
+                        self.value = event.target.value
+                        self.$emit('input', event.target.value)
+                    }
+                }
+            })
+        }
+    })
+
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'test render function'
+        }
+    })
+    </script>
 </body>
+
 </html>
