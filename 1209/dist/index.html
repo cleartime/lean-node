@@ -4,13 +4,13 @@
 <head>
     <title></title>
     <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
-    <script src='./index.js'></script>
+    <script src="/dist/1209.js"></script>
 </head>
 
 <body>
     <div id="app">
         {{name}}
-        <my-input v-model='name' :value='name'></my-input>
+        <my-input v-model="name" :value="name"></my-input>
     </div>
     <script type="text/javascript">
     Vue.component('my-input', {
